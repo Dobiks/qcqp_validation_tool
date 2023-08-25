@@ -3,12 +3,12 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64MultiArray, MultiArrayDimension
 
-TOPIC_NAME = 'topic' 
+TOPIC_NAME = 'df_publisher' 
 
 class DataFramePublisher(Node):
     def __init__(self):
         super().__init__('dataframe_publisher')
-        self.publisher = self.create_publisher(Float64MultiArray, 'topic', 10)
+        self.publisher = self.create_publisher(Float64MultiArray, TOPIC_NAME, 10)
         self.publish_dataframe()
 
     def publish_dataframe(self):

@@ -8,13 +8,13 @@ import pandas as pd
 from gurobipy import GRB, Model
 from consts import COMPONENTS, LEVEL_ORDER
 
-TOPIC_NAME = 'topic'
+TOPIC_NAME = 'df_publisher'
 
-class MinimalSubscriber(Node):
+class ValidationNode(Node):
 
     def __init__(self):
         super().__init__('minimal_subscriber')
-        self.publisher = self.create_publisher(Float64MultiArray, 'test', 10)
+        self.publisher = self.create_publisher(Float64MultiArray, 'validation', 10)
         self.subscription = self.create_subscription(
             Float64MultiArray,
             TOPIC_NAME,
@@ -214,7 +214,7 @@ class MinimalSubscriber(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    minimal_subscriber = MinimalSubscriber()
+    minimal_subscriber = ValidationNode()
 
     rclpy.spin(minimal_subscriber)
     minimal_subscriber.destroy_node()
