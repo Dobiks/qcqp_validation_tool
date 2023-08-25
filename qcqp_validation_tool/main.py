@@ -13,7 +13,7 @@ TOPIC_NAME = 'df_publisher'
 class ValidationNode(Node):
 
     def __init__(self):
-        super().__init__('minimal_subscriber')
+        super().__init__('validation_node')
         self.publisher = self.create_publisher(Float64MultiArray, 'validation', 10)
         self.subscription = self.create_subscription(
             Float64MultiArray,
