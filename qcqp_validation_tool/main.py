@@ -27,7 +27,7 @@ class ValidationNode(Node):
         self.publish_dataframe(msg.data)
 
     def publish_dataframe(self,data):
-        array_2d = np.array(data).reshape(-1, 23)
+        array_2d = np.array(data).reshape(-1, 22)
         df = pd.DataFrame(array_2d, columns=["id", "x", "y", "z"] + COMPONENTS)
         cords = self.validate_detections(df=df)
         msg = Float64MultiArray()

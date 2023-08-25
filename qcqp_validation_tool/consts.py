@@ -41,7 +41,6 @@ COMPONENTS = [
     "conn_c",
     "bag_b_l",
     "box",
-    "cross_gh",
     "conn_g",
     "conn_h",
     "conn_k",
